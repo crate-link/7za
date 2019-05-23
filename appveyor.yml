@@ -20,6 +20,7 @@ artifacts:
   - path: 7za.exe
 
 deploy:
+  tag: 19.00-vs2017
   release: 7za.exe
   description: '7za.exe 19.00 (Visual Studio 2017)'
   provider: GitHub
@@ -29,5 +30,4 @@ deploy:
   draft: false
   prerelease: false
   on:
-    branch: master
     APPVEYOR_REPO_TAG: true
