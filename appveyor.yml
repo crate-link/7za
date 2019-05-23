@@ -16,12 +16,17 @@ build_script:
   - nmake CPU=AMD64 NEW_COMPILER=1 MY_STATIC_LINK=1
   - copy x64\7za.exe ..\..\..\..\..\
 
+after_build:
+  - cd ..\..\..\..\..
+  - sha256sum 7za.exe > 7za.exe.sha256
+
 artifacts:
   - path: 7za.exe
+  - path: 7za.exe.sha256
 
 deploy:
   tag: 19.00-vs2017
-  release: 7za.exe
+  release: 7za.*
   description: '7za.exe 19.00 (Visual Studio 2017)'
   provider: GitHub
   auth_token:
