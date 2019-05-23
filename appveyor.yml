@@ -26,12 +26,12 @@ artifacts:
 
 deploy:
   tag: 19.00-vs2017
-  release: 7za.*
+  release: 7za.exe
   description: '7za.exe 19.00 (Visual Studio 2017)'
   provider: GitHub
   auth_token:
     secure: M8UHMmf7TSJxv+Q94NpkLaF4p6k4TUWoRd52Md9HQ4zvpEg3Yo+NZrgZFp4cMKNl
-  artifact: 7za.exe
+  artifact: 7za.*
   draft: false
   prerelease: false
   on:
