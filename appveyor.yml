@@ -31,7 +31,7 @@ deploy:
   provider: GitHub
   auth_token:
     secure: M8UHMmf7TSJxv+Q94NpkLaF4p6k4TUWoRd52Md9HQ4zvpEg3Yo+NZrgZFp4cMKNl
-  artifact: 7za.*
+  artifact: /7za\.exe|7za\.exe\.sha256/
   draft: false
   prerelease: false
   on:
