@@ -1,0 +1,20 @@
+version: 19.00.{build}
+
+image: Visual Studio 2017
+
+init:
+  - set SVZSRC=7z1900-src.7z
+  - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+  - cl
+
+before_build:
+  - curl -fsLO https://www.7-zip.org/a/%SVZSRC%
+  - 7z x -bd -osrc %SVZSRC%
+
+build_script:
+  - cd src\CPP\7zip\Bundles\Alone
+  - nmake CPU=AMD64 NEW_COMPILER=1 MY_STATIC_LINK=1
+  - copy x64\7za.exe ..\..\..\..\..\
+
+artifacts:
+  - path: 7za.exe
