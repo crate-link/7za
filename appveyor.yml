@@ -1,10 +1,10 @@
 version: 19.00.{build}
 
-image: Visual Studio 2017
+image: Visual Studio 2019
 
 init:
   - set SVZSRC=7z1900-src.7z
-  - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars64.bat"
+  - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvars64.bat"
   - cl
 
 before_build:
@@ -25,9 +25,9 @@ artifacts:
   - path: 7za.exe.sha256
 
 deploy:
-  tag: 19.00-vs2017
+  tag: 19.00-vs2019
   release: 7za.exe
-  description: '7za.exe 19.00 (Visual Studio 2017)'
+  description: '7za.exe 19.00 (Visual Studio 2019)'
   provider: GitHub
   auth_token:
     secure: M8UHMmf7TSJxv+Q94NpkLaF4p6k4TUWoRd52Md9HQ4zvpEg3Yo+NZrgZFp4cMKNl
